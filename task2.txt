@@ -1,0 +1,72 @@
+Objects:-
+What is Object?
+
+1.Objects are important data types in javascript.
+2.Primitive data types contain one value but Objects can hold many values.
+3.They allow to store and organize data and to represent real-world entities.
+4.An object, is a reference data type. Variables that are assigned a reference value are given a reference or a pointer to that value.
+That reference or pointer points to the location in memory where the object is stored. The variables don’t actually store the value.
+5. JavaScript objects are containers for named values.
+
+How objects are represented in javascript?
+
+1.They are unordered collection of related data, of primitive (Number, String, Boolean, null, undefined and symbol) or reference types,
+ in the form of “key: value” pairs. 
+            syntax:
+                ObjectName.ObjectProperty = propertyValue;
+            Example:
+                var myCar = new Object();
+                myCar.make = 'Ford';
+                myCar.model = 'Mustang';
+                myCar.year = 1969;
+                or
+                myCar['make'] = 'Ford';
+                myCar['model'] = 'Mustang';
+                myCar['year'] = 1969;
+
+2.These keys can be variables or functions and are called properties and methods, respectively, in the context of an object.
+        Properties are the values associated with a JavaScript object.
+        Methods are actions that can be performed on objects.
+3.Unassigned properties of an object are undefined (and not null).
+4. Properties of an object can be accessed with a simple dot-notation:
+            syntax:
+                objectName.propertyName
+                Value inside the object can be accessed using keys.
+            Example:
+                       myCar.year   // Output 1969
+
+5. We can use javascript 'new' keyword to create a new JavaScript object.
+                var person = new Object();
+                person.firstName = “John”;
+                person.lastName = “Doe”;
+                person.age = 50;
+                person.eyeColor = “blue”;
+6.One of easiest way to create a javascript object is object literal, simply define the property and values inside curly braces as shown below.
+               let bike = {name: 'SuperSport', maker:'Ducati', engine:'937cc'};
+7.With help of new keyword constructor function allows to create multiple objects of same flavor.Constructor is nothing but a function.
+            Example:
+                function Vehicle(name, maker) {
+                this.name = name;
+                this.maker = maker;
+                }
+                let car1 = new Vehicle(’Fiesta’, 'Ford’);
+                let car2 = new Vehicle(’Santa Fe’, 'Hyundai’)
+                console.log(car1.name);    //Output: Fiesta
+                console.log(car2.name);    //Output: Santa Fe
+8. Objects can also be created using the Object.create() method. 
+This method can be very useful, because it allows to choose the prototype object for the object you want to create,
+without having to define a constructor function.
+// Animal properties and method encapsulation
+var Animal = {
+  type: 'Invertebrates', // Default value of properties
+  displayType: function() {  // Method which will display type of Animal
+    console.log(this.type);
+  }
+};
+// Create new animal type called animal1 
+var animal1 = Object.create(Animal);
+animal1.displayType(); // Output:Invertebrates
+// Create new animal type called Fishes
+var fish = Object.create(Animal);
+fish.type = 'Fishes';
+fish.displayType(); // Output:Fishes
